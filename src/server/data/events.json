@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "description": "Item1",
+        "owner": "Barney Rubble",
+        "team": "WaterBuffaloes",
+        "faction": "Horde"
+    },
+    {
+        "id": 2,
+        "description": "adfadgffsdfasdf safasfasfa d",
+        "owner": "Barney Rubble",
+        "team": "Goons",
+        "faction": "Horde"
+    }
+]

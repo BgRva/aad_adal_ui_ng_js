@@ -1,0 +1,9 @@
+{
+  "name": "my.module.config",
+  "deps": ["ngAnimate"],
+  "wrap": "commonjs",
+  "constants": {
+    "myFirstCnt": true,
+    "mySecondCnt": { "hello": "world" }
+  }
+}

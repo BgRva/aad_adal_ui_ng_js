@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+
+  <style>
+    /* This helps the ng-show/ng-hide animations start at the right place. */
+
+    /* Since Angular has this but needs to load, this gives us the class early. */
+
+    [ng-cloak] {
+      display: none !important;
+    }
+
+    .ng-hide {
+      display: none!important;
+    }
+  </style>
+  <title ng-bind="title">
+    todo-ui
+  </title>
+
+  <!-- HTML5 Mode-->
+  <base href="/">
+
+  <!-- build:css styles/lib.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css" />
+  <link rel="stylesheet" href="/bower_components/toastr/toastr.css" />
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- build:css styles/app.css -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="/.tmp/styles.css">
+  <!-- endinject -->
+  <!-- endbuild -->
+</head>
+
+<body ng-cloak>
+  <div>
+    <div ng-controller="AppController as vm" class="container container-root">
+
+      <div ngplus-overlay ngplus-overlay-delay-in="50" ngplus-overlay-delay-out="700" ngplus-overlay-animation="dissolve-animation">
+        <img src="images/busy.gif" />
+        <div class="page-spinner-message overlay-message">{{vm.busyMessage}}</div>
+      </div>
+
+      <div class="container">
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" ui-sref="home">Todo List</a>
+            </div>
+            <div class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li>
+                  <a ui-sref="todos" class="active">To-Dos</a>
+                </li>
+                <li>
+                  <a ui-sref="events" class="active">Events</a>
+                </li>
+                <!-- <li>
+                  <a ui-sref="user" ng-show="userInfo.isAuthenticated" class="active">User: {{userInfo.userName}}</a>
+                </li> -->
+              </ul>
+              <!-- <ul class="nav navbar-nav navbar-right">
+                <li class="app-user navbar-text"></li>
+                <li>
+                  <li>
+                    <a class="btn btn-link" ng-show="userInfo.isAuthenticated" ng-click="vm.logout()">Logout</a>
+                  </li>
+                </li>
+                <li>
+                  <li>
+                    <a class="btn btn-link" ng-hide="userInfo.isAuthenticated" ng-click="vm.login()">Login</a>
+                  </li>
+                </li>
+              </ul> -->
+            </div>
+          </div>
+        </nav>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div ui-view></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="splash-page" ng-show="false">
+      <div class="page-splash">
+        <div class="page-splash-message">
+          ToDo List
+        </div>
+        <div class="progress progress-striped active page-progress-bar">
+          <div class="bar"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- build:js js/lib.js -->
+  <!-- bower:js -->
+  <script src="/bower_components/jquery/dist/jquery.js"></script>
+  <script src="/bower_components/angular/angular.js"></script>
+  <script src="/bower_components/angular-sanitize/angular-sanitize.js"></script>
+  <script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="/bower_components/angular-loader/angular-loader.js"></script>
+  <script src="/bower_components/angular-resource/angular-resource.js"></script>
+  <script src="/bower_components/angular-mocks/angular-mocks.js"></script>
+  <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+  <script src="/bower_components/angular-animate/angular-animate.js"></script>
+  <script src="/bower_components/toastr/toastr.js"></script>
+  <script src="/bower_components/extras.angular.plus/ngplus-overlay.js"></script>
+  <script src="/bower_components/adal-angular/lib/adal.js"></script>
+  <script src="/bower_components/adal-angular/lib/adal-angular.js"></script>
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- build:js js/env.js -->
+  <!-- inject:env:js -->
+  <script src="/src/client/app/dev.env.js"></script>
+  <!-- endinject -->
+  <!-- endbuild -->
+
+  <!-- build:js js/app.js -->
+  <!-- inject:js -->
+  <script src="/src/client/app/app.module.js"></script>
+  <script src="/src/client/app/core/core.module.js"></script>
+  <script src="/src/client/app/events/events.module.js"></script>
+  <script src="/src/client/app/exceptions/exceptions.module.js"></script>
+  <script src="/src/client/app/home/home.module.js"></script>
+  <script src="/src/client/app/logging/logging.module.js"></script>
+  <script src="/src/client/app/routing/routing.module.js"></script>
+  <script src="/src/client/app/todos/todos.module.js"></script>
+  <script src="/src/client/app/user/user.module.js"></script>
+  <script src="/src/client/app/app.config.js"></script>
+  <script src="/src/client/app/app.const.js"></script>
+  <script src="/src/client/app/app.controller.js"></script>
+  <script src="/src/client/app/app.run.js"></script>
+  <script src="/src/client/app/core/core.config.js"></script>
+  <script src="/src/client/app/core/core.const.js"></script>
+  <script src="/src/client/app/core/core.routes.js"></script>
+  <script src="/src/client/app/core/data.service.js"></script>
+  <script src="/src/client/app/events/events.controller.js"></script>
+  <script src="/src/client/app/events/events.routes.js"></script>
+  <script src="/src/client/app/exceptions/exception-handler.provider.js"></script>
+  <script src="/src/client/app/exceptions/exceptions.js"></script>
+  <script src="/src/client/app/home/home.controller.js"></script>
+  <script src="/src/client/app/home/home.routes.js"></script>
+  <script src="/src/client/app/logging/logger.js"></script>
+  <script src="/src/client/app/routing/router-helper.provider.js"></script>
+  <script src="/src/client/app/todos/todos.controller.js"></script>
+  <script src="/src/client/app/todos/todos.routes.js"></script>
+  <script src="/src/client/app/user/user.controller.js"></script>
+  <script src="/src/client/app/user/user.routes.js"></script>
+  <!-- endinject -->
+
+  <!-- inject:templates:js -->
+  <!-- endinject -->
+  <!-- endbuild -->
+</body>
+
+</html>

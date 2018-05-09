@@ -1,0 +1,66 @@
+<div class="panel">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="input-group">
+          <span class="input-group-addon" id="basic-addon1">Todos</span>
+        <input ng-model="vm.selectedDesc" class="form-control" />
+        <span class="input-group-btn">
+          <button ng-click="vm.add()" class="btn btn-default">Add</button>
+        </span>
+      </div>
+    </div>
+  </div>
+  <hr/>
+  <!-- == -->
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Item Description</th>
+        <th>Owner</th>
+        <th>Team</th>
+        <th>Faction</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr data-ng-repeat="item in vm.todos">
+        <td class="col-md-1">{{item.id}}</td>
+        <td class="col-md-4">
+          <p data-ng-hide="item.edit">{{item.description}}</p>
+          <input data-ng-show="item.edit" type="text" class="form-control" data-ng-model="vm.tmpTodo.description" />
+        </td>
+        <td class="col-md-2">{{item.owner}}</td>
+        <td class="col-md-2">{{item.team}}</td>
+        <td class="col-md-2">{{item.faction}}</td>
+        <td class="col-md-1">
+          <!-- <p data-ng-hide="item.edit || vm.editingInProgress">
+              <a data-ng-click="vm.editSwitch(item)" href="javascript:;">E</a> |
+              <a data-ng-click="vm.remove($index)" href="javascript:;">D</a>
+            </p>
+            <p data-ng-show="item.edit">
+              <a data-ng-click="vm.update($index)" href="javascript:;">S</a> |
+              <a data-ng-click="vm.editSwitch(item)" href="javascript:;">C</a>
+            </p> -->
+
+          <div class="btn-group" role="group" aria-label="..." data-ng-hide="item.edit || vm.editingInProgress">
+            <button class="btn btn-default btn-xs" ng-click="vm.editSwitch(item)">
+              <span class="glyphicon glyphicon-pencil"></span>
+            </button>
+            <button class="btn btn-default btn-xs" ng-click="vm.remove($index)">
+              <span class="glyphicon glyphicon-trash"></span>
+            </button>
+          </div>
+          <div class="btn-group" role="group" aria-label="..." data-ng-show="item.edit">
+            <button class="btn btn-default btn-xs" ng-click="vm.update($index)">
+              <span class="glyphicon glyphicon-floppy-saved"></span>
+            </button>
+            <button class="btn btn-default btn-xs" ng-click="vm.editSwitch(item)">
+              <span class="glyphicon glyphicon-ban-circle"></span>
+            </button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

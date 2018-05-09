@@ -1,0 +1,14 @@
+# Dependency directory
+# https://docs.npmjs.com/misc/faq#should-i-check-my-node-modules-folder-into-git
+node_modules/
+bower_components/
+
+# visual studio code folders
+.vscode
+.vs
+
+# folders generated in building
+.tmp/
+report/
+build/
+dist/

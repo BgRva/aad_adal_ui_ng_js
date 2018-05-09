@@ -1,0 +1,9 @@
+[
+    {
+        "id": 1,
+        "description": "Item1",
+        "owner": "Barney Rubble",
+        "team": "WaterBuffaloes",
+        "faction": "Horde"
+    }
+]
