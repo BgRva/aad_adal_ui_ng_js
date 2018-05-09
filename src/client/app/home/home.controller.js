@@ -11,9 +11,6 @@
     var vm = this;
     vm.title = 'Home';
     vm.loading = false;
-    vm.login = login;
-    vm.logout = logout;
-    vm.isActive = isActive;
 
     activate();
 
@@ -26,14 +23,6 @@
         logger.info('Activated Home View');
         vm.loading = false;
       });
-    }
-
-    function login() {
-      logger.info('Logging in ....');
-    }
-
-    function logout() {
-      logger.info('Logging out ....');
     }
 
     function isActive(viewLocation) {

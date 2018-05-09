@@ -68,11 +68,11 @@
                 <li>
                   <a ui-sref="events" class="active">Events</a>
                 </li>
-                <!-- <li>
+                <li>
                   <a ui-sref="user" ng-show="userInfo.isAuthenticated" class="active">User: {{userInfo.userName}}</a>
-                </li> -->
+                </li>
               </ul>
-              <!-- <ul class="nav navbar-nav navbar-right">
+             <ul class="nav navbar-nav navbar-right">
                 <li class="app-user navbar-text"></li>
                 <li>
                   <li>
@@ -84,7 +84,7 @@
                     <a class="btn btn-link" ng-hide="userInfo.isAuthenticated" ng-click="vm.login()">Login</a>
                   </li>
                 </li>
-              </ul> -->
+              </ul>
             </div>
           </div>
         </nav>
@@ -110,6 +110,7 @@
     </div>
   </div>
 
+  <!-- == 3rd party libraries == -->
   <!-- build:js js/lib.js -->
   <!-- bower:js -->
   <script src="/bower_components/jquery/dist/jquery.js"></script>
@@ -129,12 +130,14 @@
   <!-- endbower -->
   <!-- endbuild -->
 
+  <!-- == Application Env file == -->
   <!-- build:js js/env.js -->
   <!-- inject:env:js -->
   <script src="/src/client/app/dev.env.js"></script>
   <!-- endinject -->
   <!-- endbuild -->
 
+  <!-- == Application libraries == -->
   <!-- build:js js/app.js -->
   <!-- inject:js -->
   <script src="/src/client/app/app.module.js"></script>

@@ -20,11 +20,7 @@
           templateUrl: 'app/home/home.html',
           controller: 'HomeCtrl',
           controllerAs: 'vm',
-          title: 'Todos',
-          settings: {
-            nav: 1,
-            content: '<i class="fa fa-holds"></i> Home'
-          }
+          title: 'Home'
         }
       }
     ];

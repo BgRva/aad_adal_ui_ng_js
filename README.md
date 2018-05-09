@@ -6,8 +6,10 @@ library v 1.0.17 provided by Microsoft.
 
 The APIs are in a separate project
 
-## Step A
-No Authentication
+## Step B
+Baseline integration with Azure AD, simple authentication with adal.js, no authorization.
+
+Note that this branch builds on the **Step A** branch
 
 ## Dependendies
 This project requires npm to install dependencies.  Additionally, it uses gulp **locally** to build and run the code. 
