@@ -12,3 +12,6 @@ bower_components/
 report/
 build/
 dist/
+
+# ingnore env files
+envs/
