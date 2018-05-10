@@ -5,9 +5,9 @@
     .module('app')
     .run(appRun);
 
-  appRun.$inject = [];
+  appRun.$inject = ['$rootScope', 'authService'];
   /* @ngInject */
-  function appRun() {
-
+  function appRun($rootScope, authService) {
+    $rootScope.auth = authService;
   }
 })();

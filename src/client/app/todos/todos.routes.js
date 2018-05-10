@@ -20,7 +20,8 @@
           templateUrl: 'app/todos/todos.html',
           controller: 'TodosCtrl',
           controllerAs: 'vm',
-          title: 'Todos'
+          title: 'Todos',
+          requireADLogin: true
         }
       }
     ];

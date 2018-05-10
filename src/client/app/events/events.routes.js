@@ -20,7 +20,8 @@
           templateUrl: 'app/events/events.html',
           controller: 'EventsCtrl',
           controllerAs: 'vm',
-          title: 'Events'
+          title: 'Events',
+          requireADLogin: true
         }
       }
     ];

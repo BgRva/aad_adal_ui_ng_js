@@ -20,7 +20,8 @@
           templateUrl: 'app/user/user.html',
           controller: 'UserCtrl',
           controllerAs: 'vm',
-          title: 'user'
+          title: 'user',
+          requireADLogin: true
         }
       }
     ];

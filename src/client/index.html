@@ -50,7 +50,7 @@
       </div>
 
       <div class="container">
-        <nav class="navbar navbar-default">
+        <nav class="navbar navbar-inverse">
           <div class="container-fluid">
             <div class="navbar-header">
               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
@@ -72,7 +72,7 @@
                   <a ui-sref="user" ng-show="userInfo.isAuthenticated" class="active">User: {{userInfo.userName}}</a>
                 </li>
               </ul>
-             <ul class="nav navbar-nav navbar-right">
+              <ul class="nav navbar-nav navbar-right">
                 <li class="app-user navbar-text"></li>
                 <li>
                   <li>
@@ -88,13 +88,13 @@
             </div>
           </div>
         </nav>
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12">
-              <div ui-view></div>
-            </div>
+        <div class="row">
+          <div class="col-md-12">
+            <pre>Roles: {{userInfo.profile.roles.join()}}</pre>
           </div>
         </div>
+        <hr/>
+        <div ui-view></div>
       </div>
     </div>
 
@@ -153,6 +153,7 @@
   <script src="/src/client/app/app.const.js"></script>
   <script src="/src/client/app/app.controller.js"></script>
   <script src="/src/client/app/app.run.js"></script>
+  <script src="/src/client/app/core/auth.service.js"></script>
   <script src="/src/client/app/core/core.config.js"></script>
   <script src="/src/client/app/core/core.const.js"></script>
   <script src="/src/client/app/core/core.routes.js"></script>
