@@ -13,5 +13,5 @@ report/
 build/
 dist/
 
-# ignore local env file
-src/client/app/dev.env.local.js
+# ingore folder for local env files
+envs/
