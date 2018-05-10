@@ -6,9 +6,10 @@
     .controller('AppController', AppController);
 
   AppController.$inject = ['$q', '$rootScope', '$timeout',
-                           'logger', 'config'];
+                           'adalAuthenticationService', 'logger', 'config'];
   /* @ngInject */
-  function AppController($q, $rootScope, $timeout, logger, config) {
+  function AppController($q, $rootScope, $timeout, 
+    adalSrvc, logger, config) {
     var vm = this;
     vm.busyMessage = 'Please wait ...';
     vm.isBusy = true;
@@ -23,10 +24,12 @@
 
     function login() {
       console.log('logging in ...');
+      adalSrvc.login();
     }
 
     function logout() {
       console.log('logging out ...');
+      adalSrvc.logOut();
     }
 
     function activate() {
@@ -36,9 +39,6 @@
         logger.success(config.appTitle + ' loaded!');
         hideSplash();
         vm.loading = false;
-
-        //
-        // console.log('userInfo: ' + angular.toJson($rootScope.userInfo));
       });
     }
 

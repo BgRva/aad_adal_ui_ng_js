@@ -6,8 +6,8 @@
 
   window.__env.version = 'dev Test2';
 
+  // API base urls used in the data service
   window.__env.todoApiBase = 'http://localhost:51281/api/';
-
   window.__env.eventApiBase = 'http://localhost:49901/api/';
 
   window.__env.instance = 'http://login.microsoftonline.com/';
