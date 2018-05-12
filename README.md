@@ -22,6 +22,11 @@ This repo is a UI project only and is intended to be used in conjunction with th
 ## Configurations
 Note:  All config properties are set in the file  _src/client/app/dev.env.js_ and this file is loaded and the properties are accessible as constants throughout the application.  Update dev.env.js with API endpoints and config settings from AAD
 
+## Setup
+After cloning or downloading this project, you will need to run ```npm install`` in the repository folder, this
+will install all the dependencies into the _node_modules_ folder including gulp and bower.  If you are
+prompted to select a supported angularjs version, choose **1.6.10**
+
 ## Build & Run
 This project requires npm to be installed (installing node.js LTS 8.11.1 will work just fine). Additionally, it uses gulp and bower but **only locally** to build and run the code (I made use of a custom build process but tried to limit any required installs). In order to run the gulp tasks you need to use the local gulp instance as follows:
 
